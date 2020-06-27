@@ -22,6 +22,7 @@ from polls import api_views
 router = routers.DefaultRouter()
 router.register('question', api_views.QuestionViewSet)
 router.register('choice', api_views.ChoiceViewSet)
+router.register('q', api_views.CustomQuestionView, basename='poll')
 
 
 urlpatterns = [
