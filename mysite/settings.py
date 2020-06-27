@@ -132,3 +132,10 @@ USE_TZ = True
 USE_I18N = False
 USE_L10N = True
 USE_THOUSAND_SEPARATOR = True
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'polls.api_auth.AdminOnlyAuth',
+    ]
+}

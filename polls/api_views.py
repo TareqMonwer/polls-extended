@@ -1,11 +1,14 @@
-from .models import Question, Choice
 from rest_framework import viewsets
-from .serializers import QuestionSerializer, ChoiceSerializer
-
 from rest_framework.response import Response
+
+from .api_auth import AdminOnlyAuth
+from .serializers import QuestionSerializer, ChoiceSerializer
+from .models import Question, Choice
+
 
 
 class QuestionViewSet(viewsets.ModelViewSet):
+    authentication_classes = (AdminOnlyAuth, )
     queryset = Question.objects.all().order_by('-pub_date')
     serializer_class = QuestionSerializer
 
