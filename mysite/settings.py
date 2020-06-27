@@ -31,7 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Custom apps.
+    'rest_framework',
     'polls',
+    # Builin apps.
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
