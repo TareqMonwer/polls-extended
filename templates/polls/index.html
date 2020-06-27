@@ -14,7 +14,8 @@
         {% if latest_questions %}
         <ul>
         {% for question in latest_questions %}
-            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
+            <a href="{% url 'polls:delete' question.id %}">Delete</a></li>
         {% endfor %}
         </ul>
         {% else %}
