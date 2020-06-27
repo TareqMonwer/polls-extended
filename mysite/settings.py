@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Custom apps.
-    'rest_framework',
     'polls',
     # Builin apps.
     'django.contrib.admin',
@@ -41,6 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 3rd party apps.
+    'rest_framework',
+    'graphene',
+    'graphene_django',
 ]
 
 MIDDLEWARE = [
@@ -138,4 +142,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'polls.api_auth.AdminOnlyAuth',
     ]
+}
+
+GRAPHENE = {
+    'SCHEMA': 'polls.schema.schema'   # our graphql schema location.
 }
